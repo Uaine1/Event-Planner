@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Planner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Planning something?</h1>
+    
+    <form id="eventForm">
+      <label for="eventName">Event Name:</label>
+      <input type="text" id="eventName" required>
+
+      <label for="eventDate">Date:</label>
+      <input type="date" id="eventDate" required>
+
+      <label for="eventTime">Time:</label>
+      <input type="time" id="eventTime" required>
+
+      <label for="eventLocation">Location:</label>
+      <input type="text" id="eventLocation" required>
+
+      <label for="eventNotes">Notes:</label>
+      <textarea id="eventNotes"></textarea>
+
+      <button type="button" onclick="addEvent()">Add Event</button>
+    </form>
+
+    <div class="eventList">
+      <h2>Event List</h2>
+      <div id="events"></div>
+    </div>
+
+    <div id="mapContainer">
+      <button id="toggleMap" onclick="toggleMap()"><a href="mapper.html">Show Map</a></button>
+  
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="myscript.js"></script>
+  
+</body>
+
+<body>
+    <div class="eventList">
+      <div class="search-container">
+          <label for="searchEvent"><b>Looking for an event?</b></label>
+          <input type="text" id="searchEvent" oninput="searchEvents()" placeholder="Enter event name...">
+      </div>
+      <div id="events"></div>
+  </div>
+</body>
+
+</html>
